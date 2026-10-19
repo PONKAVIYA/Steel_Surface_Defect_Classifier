@@ -33,3 +33,6 @@ venv/
 Thumbs.db
 .vscode/
 .idea/
+# Temporary execution logs
+artifacts/logs/
+*.log
