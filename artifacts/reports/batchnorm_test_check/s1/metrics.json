@@ -1,0 +1,225 @@
+{
+  "split": "test",
+  "checkpoint": "/home/claude/steel-defect-classifier/artifacts/runs/cnn_bn_64px_flip_s1/best.pt",
+  "model_version": "steelcnn-bn-64px-flip-s1-7f74eb3b51",
+  "model_config": {
+    "input_size": 64,
+    "in_channels": 1,
+    "num_classes": 6,
+    "channels": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "use_batchnorm": true
+  },
+  "preprocessing": {
+    "input_size": 64,
+    "resample": "bilinear",
+    "grayscale": true,
+    "normalize": "unit"
+  },
+  "training": {
+    "settings": {
+      "input_size": 64,
+      "augment": "flip",
+      "seed": 1,
+      "use_batchnorm": true,
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "max_epochs": 100,
+      "patience": 15,
+      "monitor": "val_loss",
+      "device": "auto",
+      "overfit_window": 8
+    },
+    "best_epoch": 41,
+    "epochs_run": 56,
+    "best_val_loss": 0.0940761207188997,
+    "best_val_acc": 0.9777777777777777,
+    "stopped_early": true,
+    "overfitting_warning": "Possible overfitting: validation loss rose from 0.0941 (epoch 41) to 1.1532 while training accuracy went 0.984 -> 0.993. The best-validation checkpoint is kept.",
+    "train_seconds": 67.62432177299979,
+    "device": "cpu",
+    "n_params": 30654
+  },
+  "split_meta": {
+    "seed": 42,
+    "ratios": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    },
+    "dataset_root": "data/NEU-DET",
+    "created_at": "2026-10-19T07:20:37+00:00",
+    "sizes": {
+      "train": 1260,
+      "val": 270,
+      "test": 270
+    },
+    "n_images": 1800
+  },
+  "metrics": {
+    "n": 270,
+    "accuracy": 0.9814814814814815,
+    "macro": {
+      "precision": 0.981719367588933,
+      "recall": 0.9814814814814815,
+      "f1": 0.9814366345265223
+    },
+    "weighted": {
+      "precision": 0.9817193675889329,
+      "recall": 0.9814814814814815,
+      "f1": 0.9814366345265222
+    },
+    "per_class": {
+      "crazing": {
+        "display_name": "Crazing",
+        "precision": 0.9782608695652174,
+        "recall": 1.0,
+        "f1": 0.989010989010989,
+        "support": 45
+      },
+      "inclusion": {
+        "display_name": "Inclusion",
+        "precision": 0.9565217391304348,
+        "recall": 0.9777777777777777,
+        "f1": 0.967032967032967,
+        "support": 45
+      },
+      "patches": {
+        "display_name": "Patches",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 45
+      },
+      "pitted_surface": {
+        "display_name": "Pitted surface",
+        "precision": 1.0,
+        "recall": 0.9555555555555556,
+        "f1": 0.9772727272727273,
+        "support": 45
+      },
+      "rolled-in_scale": {
+        "display_name": "Rolled-in scale",
+        "precision": 0.9782608695652174,
+        "recall": 1.0,
+        "f1": 0.989010989010989,
+        "support": 45
+      },
+      "scratches": {
+        "display_name": "Scratches",
+        "precision": 0.9772727272727273,
+        "recall": 0.9555555555555556,
+        "f1": 0.9662921348314607,
+        "support": 45
+      }
+    },
+    "confusion_matrix": [
+      [
+        45,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        44,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        45,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        43,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        45,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0,
+        0,
+        43
+      ]
+    ],
+    "confusion_labels": [
+      "crazing",
+      "inclusion",
+      "patches",
+      "pitted_surface",
+      "rolled-in_scale",
+      "scratches"
+    ],
+    "pitted_vs_inclusion": {
+      "pitted_surface_predicted_as_inclusion": 0,
+      "inclusion_predicted_as_pitted_surface": 0,
+      "pitted_surface_support": 45,
+      "inclusion_support": 45
+    },
+    "nll": 0.04234401401969577,
+    "ece": 0.007942948628354906,
+    "mean_confidence": 0.9779003252585728,
+    "subsets": {
+      "single_defect_images": {
+        "n": 250,
+        "accuracy": 0.992
+      },
+      "multi_defect_images": {
+        "n": 20,
+        "accuracy": 0.85
+      }
+    }
+  },
+  "latency": {
+    "model_ms": {
+      "median": 0.5717009998988942,
+      "mean": 0.632734149994576,
+      "p95": 0.9774670002116181,
+      "runs": 200
+    },
+    "pipeline_ms": {
+      "median": 1.5786774999924091,
+      "mean": 1.6146060950086394,
+      "p95": 1.994042000205809,
+      "runs": 200
+    },
+    "batch_size": 1
+  },
+  "model_size_bytes": 132885,
+  "n_params": 30654,
+  "hardware": {
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "logical_cpus": 2,
+    "torch_threads": 2,
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "torch": "2.14.1+cu130",
+    "cuda_available": false
+  },
+  "evaluated_at": "2026-10-19T08:09:41+00:00"
+}

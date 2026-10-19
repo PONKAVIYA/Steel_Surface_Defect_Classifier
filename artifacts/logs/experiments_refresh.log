@@ -1,0 +1,32 @@
+08:26:17 INFO    experiments: [cnn_64px_none_s0] reusing existing run
+08:26:18 INFO    experiments: [cnn_64px_none_s1] reusing existing run
+08:26:18 INFO    experiments: [cnn_64px_none_s2] reusing existing run
+08:26:18 INFO    experiments: AUG none       val_acc 0.9333 +/- 0.0170  val_loss 0.2246
+08:26:18 INFO    experiments: [cnn_64px_flip_s0] reusing existing run
+08:26:18 INFO    experiments: [cnn_64px_flip_s1] reusing existing run
+08:26:18 INFO    experiments: [cnn_64px_flip_s2] reusing existing run
+08:26:19 INFO    experiments: AUG flip       val_acc 0.9494 +/- 0.0077  val_loss 0.1467
+08:26:19 INFO    experiments: [cnn_64px_flip_rot90_s0] reusing existing run
+08:26:19 INFO    experiments: [cnn_64px_flip_rot90_s1] reusing existing run
+08:26:19 INFO    experiments: [cnn_64px_flip_rot90_s2] reusing existing run
+08:26:19 INFO    experiments: AUG flip_rot90 val_acc 0.9457 +/- 0.0119  val_loss 0.1600
+08:26:19 INFO    experiments: Selected augmentation policy (validation): flip
+08:26:19 INFO    experiments: SIZE  64 val_acc 0.9494 +/- 0.0077  val_loss 0.1467
+08:26:19 INFO    experiments: [cnn_100px_flip_s0] reusing existing run
+08:26:20 INFO    experiments: [cnn_100px_flip_s1] reusing existing run
+08:26:21 INFO    experiments: [cnn_100px_flip_s2] reusing existing run
+08:26:21 INFO    experiments: SIZE 100 val_acc 0.9506 +/- 0.0107  val_loss 0.1507
+08:26:21 INFO    experiments: [cnn_128px_flip_s0] reusing existing run
+08:26:23 INFO    experiments: [cnn_128px_flip_s1] reusing existing run
+08:26:24 INFO    experiments: [cnn_128px_flip_s2] reusing existing run
+08:26:24 INFO    experiments: SIZE 128 val_acc 0.9481 +/- 0.0098  val_loss 0.1608
+08:26:24 INFO    experiments: Selected input size (validation): 64 px
+08:26:25 INFO    experiments: [cnn_bn_64px_flip_s0] reusing existing run
+08:26:25 INFO    experiments: [cnn_bn_64px_flip_s1] reusing existing run
+08:26:25 INFO    experiments: [cnn_bn_64px_flip_s2] reusing existing run
+08:26:26 INFO    experiments: BN    64 val_acc 0.9790 (no BN 0.9494)
+08:26:26 INFO    experiments: [cnn_64px_flip_s3] reusing existing run
+08:26:26 INFO    experiments: [cnn_64px_flip_s4] reusing existing run
+08:26:28 INFO    experiments: TEST baseline_64px    acc 0.9452 +/- 0.0080  macroF1 0.9451
+08:26:30 INFO    experiments: Deployed steelcnn-64px-flip-s1-09c58bf9ba -> /home/claude/steel-defect-classifier/artifacts/models/steel_cnn_fp32.pt | review threshold 0.9007 | test accuracy 0.9519
+08:26:30 INFO    experiments: Wrote /home/claude/steel-defect-classifier/artifacts/reports/experiments.json

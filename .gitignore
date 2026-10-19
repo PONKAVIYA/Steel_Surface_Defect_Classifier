@@ -1,0 +1,35 @@
+# Raw datasets (download separately; never commit)
+data/NEU-DET/
+data/NEU-CLS/
+data/raw/
+# Runtime data: inspection database, stored images, hardware drop folder
+data/inspections/
+data/hardware_inbox/
+# Per-run training outputs (large, regenerable). The small deployed models in artifacts/models/
+# (~0.1-0.2 MB), the split manifest and the reports ARE kept so the app works after cloning.
+artifacts/runs/
+artifacts/runs_*/
+artifacts/reports_*/
+artifacts/models_*/
+artifacts/reports/test_runs/
+artifacts/models/previous/
+*.tmp
+
+# Python / tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Secrets / local settings
+.env
+.streamlit/secrets.toml
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

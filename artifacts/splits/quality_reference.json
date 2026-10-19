@@ -1,0 +1,50 @@
+{
+  "source": "training split statistics",
+  "n_images": 1260,
+  "percentile_low": 0.5,
+  "percentile_high": 99.5,
+  "stats": {
+    "mean": {
+      "min": 34.33695,
+      "max": 245.6474,
+      "p_low": 37.76440875,
+      "p_high": 240.516796,
+      "median": 125.610625
+    },
+    "std": {
+      "min": 5.971745856740724,
+      "max": 74.20652097911865,
+      "p_low": 7.592373335215805,
+      "p_high": 72.32964462203256,
+      "median": 23.55032093852156
+    },
+    "lap_var": {
+      "min": 8.778873499374999,
+      "max": 2793.115423619375,
+      "p_low": 10.9687842784,
+      "p_high": 2706.818216823672,
+      "median": 418.20855446437497
+    },
+    "clipped_frac": {
+      "min": 0.0,
+      "max": 0.536,
+      "p_low": 0.0,
+      "p_high": 0.39598349999999716,
+      "median": 2.5e-05
+    },
+    "channel_diff": {
+      "min": 0.0,
+      "max": 0.0,
+      "p_low": 0.0,
+      "p_high": 0.0,
+      "median": 0.0
+    }
+  },
+  "thresholds": {
+    "min_mean_brightness": 37.76440875,
+    "max_mean_brightness": 240.516796,
+    "min_contrast_std": 7.592373335215805,
+    "min_laplacian_var": 10.9687842784,
+    "max_clipped_fraction": 0.39598349999999716
+  }
+}

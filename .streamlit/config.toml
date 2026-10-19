@@ -1,0 +1,21 @@
+[theme]
+base = "light"
+# Cold-rolled steel greys with a single "temper blue" accent (the blue oxide tint of tempered steel).
+primaryColor = "#3B5BA9"
+backgroundColor = "#F4F6F8"
+secondaryBackgroundColor = "#E5E9EE"
+textColor = "#1D2A35"
+font = "sans serif"
+
+[server]
+# Local inspection station by default (also avoids Streamlit's public-IP lookup).
+# To open it to the lab network: streamlit run app.py --server.address 0.0.0.0
+address = "localhost"
+headless = true
+maxUploadSize = 10
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"

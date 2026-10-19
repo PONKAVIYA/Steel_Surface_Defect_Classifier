@@ -1,0 +1,26 @@
+{
+  "note": "Informational only: BatchNorm variant evaluated on the test split AFTER the deployment decision; not used to choose the deployed model.",
+  "runs": [
+    "cnn_bn_64px_flip_s0",
+    "cnn_bn_64px_flip_s1",
+    "cnn_bn_64px_flip_s2"
+  ],
+  "test_acc": {
+    "values": [
+      0.9740740740740741,
+      0.9814814814814815,
+      0.9777777777777777
+    ],
+    "mean": 0.9777777777777779,
+    "std": 0.003703703703703709
+  },
+  "test_macro_f1": {
+    "values": [
+      0.9740611698102054,
+      0.9814366345265223,
+      0.9778093588547913
+    ],
+    "mean": 0.977769054397173,
+    "std": 0.0036878975422843276
+  }
+}

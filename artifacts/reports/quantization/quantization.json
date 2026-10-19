@@ -1,0 +1,63 @@
+{
+  "status": "ok",
+  "method": "PyTorch eager-mode post-training static quantization (conv+ReLU fused, per-channel weights, calibrated on training images)",
+  "engine": "x86",
+  "n_test": 270,
+  "calibration_images": 512,
+  "source_model_version": "steelcnn-64px-flip-s1-09c58bf9ba",
+  "fp32": {
+    "accuracy": 0.9518518518518518,
+    "macro_f1": 0.9518485084886553,
+    "size_bytes": 127621,
+    "latency_ms": {
+      "median": 0.5478165001022717,
+      "mean": 0.6011729500035775,
+      "p95": 0.7683189996896544,
+      "runs": 300
+    },
+    "per_class_recall": {
+      "crazing": 1.0,
+      "inclusion": 0.9555555555555556,
+      "patches": 1.0,
+      "pitted_surface": 0.8666666666666667,
+      "rolled-in_scale": 0.9777777777777777,
+      "scratches": 0.9111111111111111
+    }
+  },
+  "int8": {
+    "accuracy": 0.9407407407407408,
+    "macro_f1": 0.9405908686822503,
+    "size_bytes": 44291,
+    "latency_ms": {
+      "median": 0.4135449999012053,
+      "mean": 0.4398186099964126,
+      "p95": 0.6281330001911556,
+      "runs": 300
+    },
+    "per_class_recall": {
+      "crazing": 1.0,
+      "inclusion": 0.9777777777777777,
+      "patches": 1.0,
+      "pitted_surface": 0.8444444444444444,
+      "rolled-in_scale": 0.9111111111111111,
+      "scratches": 0.9111111111111111
+    },
+    "path": "/home/claude/steel-defect-classifier/artifacts/models/steel_cnn_int8.pt"
+  },
+  "agreement": 0.9777777777777777,
+  "max_abs_prob_diff": 0.2135084867477417,
+  "hardware": {
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "logical_cpus": 2,
+    "torch_threads": 2,
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "torch": "2.14.1+cu130",
+    "cuda_available": false
+  },
+  "notes": [
+    "Latency = model forward pass only, batch size 1, same thread count for both models.",
+    "FP32 size is the full checkpoint file (weights + metadata); INT8 size is the INT8 file.",
+    "INT8 speed-ups depend on the CPU and runtime; re-measure on the target device."
+  ]
+}

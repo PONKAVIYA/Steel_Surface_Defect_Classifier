@@ -1,0 +1,97 @@
+# Steel Surface Defect Classifier - default configuration.
+# All paths are relative to the project root unless absolute.
+
+seed: 42
+
+paths:
+  dataset_root: data/NEU-DET          # raw dataset as provided (any supported layout)
+  splits_dir: artifacts/splits        # split manifests + dataset report
+  runs_dir: artifacts/runs            # one folder per training run (checkpoints, history)
+  models_dir: artifacts/models        # deployed model(s) used by the app / API
+  reports_dir: artifacts/reports      # evaluation reports, figures, experiment summaries
+  inspections_dir: data/inspections   # SQLite DB + stored inspection images (runtime data)
+
+data:
+  # Fixed class order == class index. Never reorder: checkpoints store this list and are validated against it.
+  class_names: [crazing, inclusion, patches, pitted_surface, rolled-in_scale, scratches]
+  split:
+    train: 0.70
+    val: 0.15
+    test: 0.15
+    seed: 42
+  duplicates:
+    # Exact duplicates: identical file bytes (md5).
+    # Near duplicates: normalised cross-correlation of illumination-removed 64x64 images, maximised over
+    # all 8 flips/rotations. Pairs >= threshold are grouped and kept in the same split.
+    # 0.70 was chosen by visual inspection of NEU pairs (see docs/DATASET.md); it is deliberately
+    # conservative: grouping a false match costs little, missing a true duplicate leaks test data.
+    signature_size: 64
+    signature_sigma: 3.0
+    similarity_threshold: 0.70
+  supported_extensions: [.bmp, .jpg, .jpeg, .png]
+
+preprocessing:
+  input_size: 64           # baseline. Experiments also evaluate 100 and 128.
+  resample: bilinear       # PIL resampling filter used for BOTH training and inference
+  grayscale: true
+  normalize: unit          # pixel / 255 -> [0, 1]
+
+augmentation:
+  # none | flip | flip_rot90  (training split only; never applied to validation/test)
+  policy: flip
+
+model:
+  name: SteelCNN
+  channels: [8, 16, 32, 64]
+  use_batchnorm: false     # documented experiment only; baseline is false
+
+training:
+  batch_size: 32
+  learning_rate: 0.001
+  max_epochs: 100
+  early_stopping_patience: 15
+  monitor: val_loss         # checkpoint selection + early stopping criterion (validation only)
+  device: auto              # auto | cpu | cuda
+  overfit_window: 8         # epochs of rising val loss while train acc rises -> overfitting warning
+
+evaluation:
+  latency_runs: 200         # timed single-image forward passes for latency measurement
+  latency_warmup: 20
+
+inference:
+  model_path: artifacts/models/steel_cnn_fp32.pt
+  int8_model_path: artifacts/models/steel_cnn_int8.pt
+  # Review-needed threshold on the top softmax score. null = use the value calibrated on the
+  # validation split and stored in the checkpoint (see scripts/calibrate_threshold.py).
+  review_threshold: null
+  threshold_calibration:
+    target_accepted_accuracy: 0.99   # lowest threshold whose accepted validation predictions reach this accuracy
+    min_threshold: 0.50
+  gradcam_layer: block4
+
+quality:
+  # Thresholds are derived from the TRAINING split statistics by prepare_dataset.py
+  # (artifacts/splits/quality_reference.json). These are fallbacks if that file is missing.
+  fallback:
+    min_mean_brightness: 25.0
+    max_mean_brightness: 230.0
+    min_contrast_std: 8.0
+    min_laplacian_var: 20.0
+    max_clipped_fraction: 0.20
+  percentile_low: 0.5       # percentile of training-set statistic used as the lower bound
+  percentile_high: 99.5
+  expected_size: [200, 200]
+  max_aspect_deviation: 0.10
+  max_color_channel_diff: 6.0   # mean abs diff between RGB channels above which an image is treated as colour
+  max_upload_mb: 10
+
+hardware:
+  # standalone | simulated | folder.  "folder" watches a drop directory the ECE system writes to.
+  adapter: simulated
+  device_id: SIM-CAM-01
+  drop_folder: data/hardware_inbox
+  timeout_s: 5.0
+
+api:
+  host: 127.0.0.1
+  port: 8000

@@ -1,0 +1,247 @@
+{
+  "split": "test",
+  "checkpoint": "/home/claude/steel-defect-classifier/artifacts/models/steel_cnn_fp32.pt",
+  "model_version": "steelcnn-64px-flip-s1-09c58bf9ba",
+  "model_config": {
+    "input_size": 64,
+    "in_channels": 1,
+    "num_classes": 6,
+    "channels": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "use_batchnorm": false
+  },
+  "preprocessing": {
+    "input_size": 64,
+    "resample": "bilinear",
+    "grayscale": true,
+    "normalize": "unit"
+  },
+  "training": {
+    "settings": {
+      "input_size": 64,
+      "augment": "flip",
+      "seed": 1,
+      "use_batchnorm": false,
+      "batch_size": 32,
+      "learning_rate": 0.001,
+      "max_epochs": 100,
+      "patience": 15,
+      "monitor": "val_loss",
+      "device": "auto",
+      "overfit_window": 8
+    },
+    "best_epoch": 62,
+    "epochs_run": 77,
+    "best_val_loss": 0.1325586743376873,
+    "best_val_acc": 0.9518518518518518,
+    "stopped_early": true,
+    "overfitting_warning": "Possible overfitting: validation loss rose from 0.1326 (epoch 62) to 0.1874 while training accuracy went 0.971 -> 0.976. The best-validation checkpoint is kept.",
+    "train_seconds": 72.72901514399996,
+    "device": "cpu",
+    "n_params": 30534
+  },
+  "split_meta": {
+    "seed": 42,
+    "ratios": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    },
+    "dataset_root": "data/NEU-DET",
+    "created_at": "2026-10-19T08:19:30+00:00",
+    "sizes": {
+      "train": 1260,
+      "val": 270,
+      "test": 270
+    },
+    "n_images": 1800
+  },
+  "metrics": {
+    "n": 270,
+    "accuracy": 0.9518518518518518,
+    "macro": {
+      "precision": 0.9535382705697634,
+      "recall": 0.9518518518518518,
+      "f1": 0.9518485084886553
+    },
+    "weighted": {
+      "precision": 0.9535382705697634,
+      "recall": 0.9518518518518518,
+      "f1": 0.9518485084886553
+    },
+    "per_class": {
+      "crazing": {
+        "display_name": "Crazing",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 45
+      },
+      "inclusion": {
+        "display_name": "Inclusion",
+        "precision": 0.86,
+        "recall": 0.9555555555555556,
+        "f1": 0.9052631578947369,
+        "support": 45
+      },
+      "patches": {
+        "display_name": "Patches",
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 45
+      },
+      "pitted_surface": {
+        "display_name": "Pitted surface",
+        "precision": 0.9512195121951219,
+        "recall": 0.8666666666666667,
+        "f1": 0.9069767441860465,
+        "support": 45
+      },
+      "rolled-in_scale": {
+        "display_name": "Rolled-in scale",
+        "precision": 0.9565217391304348,
+        "recall": 0.9777777777777777,
+        "f1": 0.967032967032967,
+        "support": 45
+      },
+      "scratches": {
+        "display_name": "Scratches",
+        "precision": 0.9534883720930233,
+        "recall": 0.9111111111111111,
+        "f1": 0.9318181818181818,
+        "support": 45
+      }
+    },
+    "confusion_matrix": [
+      [
+        45,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        43,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        45,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        4,
+        0,
+        39,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        44,
+        0
+      ],
+      [
+        0,
+        3,
+        0,
+        0,
+        1,
+        41
+      ]
+    ],
+    "confusion_labels": [
+      "crazing",
+      "inclusion",
+      "patches",
+      "pitted_surface",
+      "rolled-in_scale",
+      "scratches"
+    ],
+    "pitted_vs_inclusion": {
+      "pitted_surface_predicted_as_inclusion": 4,
+      "inclusion_predicted_as_pitted_surface": 1,
+      "pitted_surface_support": 45,
+      "inclusion_support": 45
+    },
+    "nll": 0.1287056125888758,
+    "ece": 0.012084088833243748,
+    "mean_confidence": 0.9437206602758832,
+    "subsets": {
+      "single_defect_images": {
+        "n": 250,
+        "accuracy": 0.96
+      },
+      "multi_defect_images": {
+        "n": 20,
+        "accuracy": 0.85
+      }
+    }
+  },
+  "latency": {
+    "model_ms": {
+      "median": 0.5759080004281714,
+      "mean": 0.6059799499644214,
+      "p95": 0.7722850004938664,
+      "runs": 200
+    },
+    "pipeline_ms": {
+      "median": 1.652425499742094,
+      "mean": 1.5881599349950193,
+      "p95": 1.9133779996991507,
+      "runs": 200
+    },
+    "batch_size": 1
+  },
+  "model_size_bytes": 127749,
+  "n_params": 30534,
+  "hardware": {
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "logical_cpus": 2,
+    "torch_threads": 2,
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "torch": "2.14.1+cu130",
+    "cuda_available": false
+  },
+  "evaluated_at": "2026-10-19T08:26:29+00:00",
+  "review_threshold": {
+    "threshold": 0.9007325768470764,
+    "target_accepted_accuracy": 0.99,
+    "min_threshold": 0.5,
+    "target_reachable": true,
+    "n_val": 270,
+    "val_accuracy": 0.9518518518518518,
+    "val_coverage": 0.837037037037037,
+    "val_accepted_accuracy": 0.9911504424778761,
+    "val_flagged": 44,
+    "val_errors_total": 13,
+    "val_errors_flagged": 11,
+    "method": "lowest top-softmax threshold >= min_threshold whose accepted validation predictions reach the target accuracy"
+  },
+  "review_on_test": {
+    "threshold": 0.9007325768470764,
+    "flagged": 38,
+    "n": 270,
+    "errors_total": 13,
+    "errors_flagged": 11,
+    "accepted_accuracy": 0.9913793103448276
+  }
+}

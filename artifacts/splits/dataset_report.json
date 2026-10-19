@@ -1,0 +1,475 @@
+{
+  "created_at": "2026-10-19T08:19:30+00:00",
+  "dataset_root": "/home/claude/steel-defect-classifier/data/NEU-DET",
+  "n_images": 1800,
+  "class_counts": {
+    "crazing": 300,
+    "inclusion": 300,
+    "patches": 300,
+    "pitted_surface": 300,
+    "rolled-in_scale": 300,
+    "scratches": 300
+  },
+  "missing_classes": [],
+  "image_sizes": {
+    "200x200": 1800
+  },
+  "image_modes": {
+    "JPEG/RGB": 1800
+  },
+  "max_channel_difference": 0.0,
+  "unreadable": [],
+  "unlabeled": [],
+  "unsupported_format_files": [],
+  "label_conflicts": [],
+  "duplicates": {
+    "method": "md5 (exact) + normalised cross-correlation of high-pass 64px images over 8 orientations, threshold 0.7",
+    "n_pairs": 43,
+    "n_exact": 1,
+    "n_cross_class": 0,
+    "pairs": [
+      {
+        "a": "train_images/inclusion_188.jpg",
+        "b": "train_images/inclusion_210.jpg",
+        "similarity": 0.8915,
+        "exact": false,
+        "label_a": "inclusion",
+        "label_b": "inclusion",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/patches_101.jpg",
+        "b": "train_images/patches_105.jpg",
+        "similarity": 1.0,
+        "exact": true,
+        "label_a": "patches",
+        "label_b": "patches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/pitted_surface_171.jpg",
+        "b": "train_images/pitted_surface_292.jpg",
+        "similarity": 0.727,
+        "exact": false,
+        "label_a": "pitted_surface",
+        "label_b": "pitted_surface",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_100.jpg",
+        "b": "train_images/scratches_170.jpg",
+        "similarity": 0.7089,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_102.jpg",
+        "b": "train_images/scratches_288.jpg",
+        "similarity": 0.7491,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_105.jpg",
+        "b": "train_images/scratches_41.jpg",
+        "similarity": 0.7007,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_112.jpg",
+        "b": "train_images/scratches_39.jpg",
+        "similarity": 0.767,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_114.jpg",
+        "b": "train_images/scratches_148.jpg",
+        "similarity": 0.7345,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_116.jpg",
+        "b": "train_images/scratches_119.jpg",
+        "similarity": 0.7432,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_119.jpg",
+        "b": "train_images/scratches_142.jpg",
+        "similarity": 0.72,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_119.jpg",
+        "b": "train_images/scratches_35.jpg",
+        "similarity": 0.7279,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_144.jpg",
+        "b": "train_images/scratches_148.jpg",
+        "similarity": 0.7341,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_151.jpg",
+        "b": "train_images/scratches_45.jpg",
+        "similarity": 0.7736,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_177.jpg",
+        "b": "train_images/scratches_50.jpg",
+        "similarity": 0.7167,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_178.jpg",
+        "b": "train_images/scratches_259.jpg",
+        "similarity": 0.8364,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_178.jpg",
+        "b": "train_images/scratches_38.jpg",
+        "similarity": 0.7273,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_178.jpg",
+        "b": "train_images/scratches_43.jpg",
+        "similarity": 0.7128,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_178.jpg",
+        "b": "train_images/scratches_59.jpg",
+        "similarity": 0.7177,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_180.jpg",
+        "b": "train_images/scratches_258.jpg",
+        "similarity": 0.8315,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_180.jpg",
+        "b": "train_images/scratches_65.jpg",
+        "similarity": 0.8421,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_181.jpg",
+        "b": "train_images/scratches_185.jpg",
+        "similarity": 0.7166,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_183.jpg",
+        "b": "train_images/scratches_61.jpg",
+        "similarity": 0.7259,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_183.jpg",
+        "b": "train_images/scratches_99.jpg",
+        "similarity": 0.7377,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_184.jpg",
+        "b": "train_images/scratches_41.jpg",
+        "similarity": 0.7534,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_184.jpg",
+        "b": "train_images/scratches_46.jpg",
+        "similarity": 0.7149,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_201.jpg",
+        "b": "train_images/scratches_43.jpg",
+        "similarity": 0.731,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_232.jpg",
+        "b": "valid_images/scratches_247.jpg",
+        "similarity": 0.9444,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_256.jpg",
+        "b": "train_images/scratches_38.jpg",
+        "similarity": 0.7879,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_256.jpg",
+        "b": "train_images/scratches_45.jpg",
+        "similarity": 0.7107,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_258.jpg",
+        "b": "train_images/scratches_65.jpg",
+        "similarity": 0.7509,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_259.jpg",
+        "b": "train_images/scratches_59.jpg",
+        "similarity": 0.817,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_260.jpg",
+        "b": "train_images/scratches_263.jpg",
+        "similarity": 0.724,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_260.jpg",
+        "b": "train_images/scratches_46.jpg",
+        "similarity": 0.7601,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_279.jpg",
+        "b": "valid_images/scratches_157.jpg",
+        "similarity": 0.7563,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_287.jpg",
+        "b": "train_images/scratches_53.jpg",
+        "similarity": 0.7055,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_34.jpg",
+        "b": "train_images/scratches_36.jpg",
+        "similarity": 0.8211,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_36.jpg",
+        "b": "train_images/scratches_64.jpg",
+        "similarity": 0.7295,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_37.jpg",
+        "b": "valid_images/scratches_121.jpg",
+        "similarity": 0.7332,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_41.jpg",
+        "b": "train_images/scratches_46.jpg",
+        "similarity": 0.8169,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_51.jpg",
+        "b": "train_images/scratches_69.jpg",
+        "similarity": 0.7298,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_61.jpg",
+        "b": "train_images/scratches_64.jpg",
+        "similarity": 0.7865,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_63.jpg",
+        "b": "train_images/scratches_99.jpg",
+        "similarity": 0.7297,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      },
+      {
+        "a": "train_images/scratches_64.jpg",
+        "b": "train_images/scratches_99.jpg",
+        "similarity": 0.7183,
+        "exact": false,
+        "label_a": "scratches",
+        "label_b": "scratches",
+        "cross_class": false
+      }
+    ],
+    "n_groups_with_duplicates": 19,
+    "excluded_conflicting_exact_duplicates": []
+  },
+  "annotations": {
+    "n_with_annotation": 1800,
+    "n_multi_defect": 123,
+    "multi_defect_by_label": {
+      "crazing": 5,
+      "inclusion": 0,
+      "patches": 29,
+      "pitted_surface": 39,
+      "rolled-in_scale": 0,
+      "scratches": 50
+    },
+    "n_annotation_missing_primary": 0,
+    "note": "Image-level label = file-name/folder label (NEU-CLS convention). Images whose XML boxes also contain other defect classes are flagged multi_defect and kept."
+  },
+  "split": {
+    "seed": 42,
+    "ratios": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    },
+    "sizes": {
+      "train": 1260,
+      "val": 270,
+      "test": 270
+    },
+    "per_class": {
+      "train": {
+        "crazing": 210,
+        "inclusion": 210,
+        "patches": 210,
+        "pitted_surface": 210,
+        "rolled-in_scale": 210,
+        "scratches": 210
+      },
+      "val": {
+        "crazing": 45,
+        "inclusion": 45,
+        "patches": 45,
+        "pitted_surface": 45,
+        "rolled-in_scale": 45,
+        "scratches": 45
+      },
+      "test": {
+        "crazing": 45,
+        "inclusion": 45,
+        "patches": 45,
+        "pitted_surface": 45,
+        "rolled-in_scale": 45,
+        "scratches": 45
+      }
+    }
+  }
+}
