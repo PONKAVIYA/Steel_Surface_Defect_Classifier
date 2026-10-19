@@ -1,6 +1,6 @@
 {
   "split": "test",
-  "checkpoint": "/home/claude/steel-defect-classifier/artifacts/runs/cnn_bn_64px_flip_s2/best.pt",
+  "checkpoint": "./artifacts/runs/cnn_bn_64px_flip_s2/best.pt",
   "model_version": "steelcnn-bn-64px-flip-s2-e0672032af",
   "model_config": {
     "input_size": 64,

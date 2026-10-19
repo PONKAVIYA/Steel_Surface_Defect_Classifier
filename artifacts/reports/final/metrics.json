@@ -1,6 +1,6 @@
 {
   "split": "test",
-  "checkpoint": "/home/claude/steel-defect-classifier/artifacts/models/steel_cnn_fp32.pt",
+  "checkpoint": "./artifacts/models/steel_cnn_fp32.pt",
   "model_version": "steelcnn-64px-flip-s1-09c58bf9ba",
   "model_config": {
     "input_size": 64,

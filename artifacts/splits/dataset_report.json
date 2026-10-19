@@ -1,6 +1,6 @@
 {
   "created_at": "2026-10-19T08:19:30+00:00",
-  "dataset_root": "/home/claude/steel-defect-classifier/data/NEU-DET",
+  "dataset_root": "data/NEU-DET",
   "n_images": 1800,
   "class_counts": {
     "crazing": 300,

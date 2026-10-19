@@ -42,7 +42,7 @@
       "rolled-in_scale": 0.9111111111111111,
       "scratches": 0.9111111111111111
     },
-    "path": "/home/claude/steel-defect-classifier/artifacts/models/steel_cnn_int8.pt"
+    "path": "./artifacts/models/steel_cnn_int8.pt"
   },
   "agreement": 0.9777777777777777,
   "max_abs_prob_diff": 0.2135084867477417,
