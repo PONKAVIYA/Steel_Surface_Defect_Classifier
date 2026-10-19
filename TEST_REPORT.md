@@ -9,6 +9,8 @@ Date: 2026-10-19. Everything below was executed in the build environment; nothin
 | Automated tests (system environment) | **114 passed, 0 failed, 0 skipped** (20.1 s) |
 | Automated tests (fresh virtual environment from `requirements.txt`) | **114 passed, 0 failed, 0 skipped, 0 warnings** (19.0 s) |
 | Real-data tests with dataset/model hidden | 7 **skipped with "BLOCKED" reason**, none passed (verified behaviour) |
+| Delivered zip, unpacked fresh, without the dataset | 108 passed, 6 skipped as "BLOCKED: missing NEU dataset" |
+| Delivered zip, unpacked fresh, dataset placed in `data/NEU-DET` | **114 passed** |
 | Documented commands | all exited with code 0 (list below) |
 | Model training on the real NEU dataset | done: 20 runs, protocol in `docs/EXPERIMENTS.md` |
 | Test-set evaluation of the deployed model | done: accuracy **95.19%**, macro F1 0.952 |

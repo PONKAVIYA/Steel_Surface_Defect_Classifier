@@ -28,10 +28,20 @@ FINAL_REPORT = ROOT / "artifacts" / "reports" / "final" / "metrics.json"
 real_dataset_available = REAL_MANIFEST.is_file() and REAL_DATASET.is_dir()
 real_model_available = DEPLOYED_MODEL.is_file()
 
-requires_real_data = pytest.mark.skipif(not real_dataset_available,
-                                        reason="BLOCKED: NEU dataset / split manifest not present")
+def _blocked_reason(need_model: bool) -> str:
+    missing = []
+    if not REAL_DATASET.is_dir():
+        missing.append("NEU dataset (data/NEU-DET)")
+    if not REAL_MANIFEST.is_file():
+        missing.append("split manifest (artifacts/splits/split_manifest.csv)")
+    if need_model and not real_model_available:
+        missing.append("trained model (artifacts/models/steel_cnn_fp32.pt)")
+    return "BLOCKED: missing " + " and ".join(missing)
+
+
+requires_real_data = pytest.mark.skipif(not real_dataset_available, reason=_blocked_reason(False))
 requires_real_model = pytest.mark.skipif(not (real_dataset_available and real_model_available),
-                                         reason="BLOCKED: trained model artifacts/models/steel_cnn_fp32.pt not present")
+                                         reason=_blocked_reason(True))
 
 
 def pytest_configure(config):

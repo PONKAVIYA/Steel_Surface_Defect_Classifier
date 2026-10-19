@@ -41,7 +41,7 @@ The app listens on this computer only. To reach it from another machine on the l
 
 On Linux, the default PyPI PyTorch wheel pulls in several GB of CUDA libraries even for CPU use. To save space you can install the CPU-only build first with `pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu` and then run the line above. (That index was not reachable from the build environment, so this variant is untested here. Windows and macOS wheels from PyPI are CPU builds already.)
 
-The trained model (`artifacts/models/steel_cnn_fp32.pt`), split manifest and evaluation reports are included, so the app works immediately with the bundled demo samples. To retrain or re-evaluate you need the dataset (next section).
+The trained model (`artifacts/models/steel_cnn_fp32.pt`), split manifest and evaluation reports are included, so the app works immediately with the bundled demo samples. The dataset itself is not included: to retrain, re-evaluate or run the real-data tests, put it in `data/NEU-DET/` (next section).
 
 ## Dataset layout
 
